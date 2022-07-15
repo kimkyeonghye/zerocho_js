@@ -9,3 +9,5 @@ https://www.inflearn.com/course/%EB%A0%88%EC%B8%A0%EA%B8%B0%EB%A6%BF-%EC%9E%90%E
 ### /word-relay
 끝말잇기 게임
 
+### /baseball-game
+야구게임
