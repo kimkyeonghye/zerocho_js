@@ -8,13 +8,47 @@
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>baseball game</title>
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css"
+        />
+        <style>
+            * {
+                font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Pretendard,
+                    Roboto, 'Noto Sans KR', 'Segoe UI', 'Malgun Gothic', 'Apple Color Emoji',
+                    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+                line-height: 1.5;
+            }
+            #alert {
+                font-weight: bold;
+                padding: 20px 0;
+            }
+            #game-restart {
+                display: none;
+                margin-top: 20px;
+            }
+            .on {
+                display: block !important;
+            }
+        </style>
     </head>
     <body>
+        <h1>⚾ 숫자 야구 게임</h1>
+        <p>
+            1~9까지의 수를 중복없이 <strong>4개</strong> 입력해주세요.
+            <br />
+            기회는 총 10번 입니다.
+        </p>
         <form id="form">
             <input type="text" id="input" />
-            <button type="button">확인</button>
+            <button type="submit">확인</button>
         </form>
+        <div id="alert"></div>
+        <h3>📃 결과</h3>
         <div id="logs"></div>
+        <button id="game-restart">게임 재시작</button>
         <script src="script.js"></script>
     </body>
 </html>
