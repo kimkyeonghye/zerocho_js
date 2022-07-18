@@ -4,10 +4,12 @@ const $alert = document.querySelector('#alert');
 const $logs = document.querySelector('#logs');
 const $gameRestart = document.querySelector('#game-restart');
 
-const numbers = [];
-for (let n = 0; n < 9; n++) {
-    numbers.push(n + 1);
-}
+// const numbers = [];
+const numbers = Array(9)
+    .fill()
+    .map((element, index) => {
+        return index + 1;
+    });
 
 const answer = [];
 for (let n = 0; n < 4; n++) {
@@ -41,8 +43,8 @@ let out = 0;
 const onCount = (value) => {
     let strike = 0;
     let ball = 0;
-    for (let i = 0; i < answer.length; i++) {
-        const index = value.indexOf(answer[i]);
+    answer.forEach((element, i) => {
+        const index = value.indexOf(element);
         if (index > -1) {
             if (index === i) {
                 strike++;
@@ -50,7 +52,8 @@ const onCount = (value) => {
                 ball++;
             }
         }
-    }
+    });
+
     if (strike === 0 && ball === 0) {
         out++;
     }
