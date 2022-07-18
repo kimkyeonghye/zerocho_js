@@ -38,9 +38,6 @@ const checkInput = (value) => {
 };
 
 const onCount = (value) => {
-    if (answer.join('') === value) {
-        return value;
-    }
     let strike = 0;
     let ball = 0;
     for (let i = 0; i < answer.length; i++) {
