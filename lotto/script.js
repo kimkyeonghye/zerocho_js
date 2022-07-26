@@ -9,12 +9,27 @@ const candidate = Array(45)
 const shuffle = [];
 while (candidate.length > 0) {
     const random = Math.floor(Math.random() * candidate.length);
-    shuffle.push(candidate[random]);
-    candidate.splice(random, 1);
+    const spliceArray = candidate.splice(random, 1);
+    const value = spliceArray[0];
+    shuffle.push(value);
 }
-console.log(candidate);
-console.log(shuffle);
 
 const winBalls = shuffle.slice(0, 6).sort((a, b) => a - b);
 const bonus = shuffle[6];
 console.log(winBalls, bonus);
+
+const showBalls = (number, $target) => {
+    const $ball = document.createElement('div');
+    $ball.className = 'ball';
+    $ball.textContent = number;
+    $target.appendChild($ball);
+};
+
+for (let i = 0; i < winBalls.length; i++) {
+    setTimeout(() => {
+        showBalls(winBalls[i], $result);
+    }, (i + 1) * 1000);
+}
+setTimeout(() => {
+    showBalls(bonus, $bonus);
+}, 7000);
